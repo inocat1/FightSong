@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>《風格演繹展演實踐》30分鐘個人專場提案 - 潘奕嘉</title>
+  <style>
+    :root {
+      /* 現代亮色系 (白底黑字調色盤) */
+      --bg-page: #f8f9fa;
+      --bg-card: #ffffff;
+      --border-color: #e9ecef;
+      --border-dark: #ced4da;
+      --text-main: #212529;
+      --text-muted: #495057;
+      --text-sub: #6c757d;
+      
+      /* 風格識別色 */
+      --color-jazz: #2b6cb0;
+      --color-jazz-bg: #ebf8ff;
+      --color-jazz-border: #bee3f8;
+
+      --color-rock: #c53030;
+      --color-rock-bg: #fff5f5;
+      --color-rock-border: #fed7d7;
+
+      --color-gold: #b7791f;
+      --color-gold-bg: #fefcbf;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 60px;
+    }
+
+    .container {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    /* 頂部標頭 */
+    .hero-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .badge-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--color-gold-bg);
+      color: var(--color-gold);
+      border: 1px solid #f6e05e;
+      margin-bottom: 10px;
+    }
+    .main-title {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #1a202c;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .sub-title {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      font-weight: 500;
+    }
+
+    /* 資訊概覽卡片 */
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .meta-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+    .meta-label {
+      font-size: 0.72rem;
+      color: var(--text-sub);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .meta-val {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 2px;
+    }
+
+    /* 正文卡片 (第一種版型的精緻卡片) */
+    .content-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 20px 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .card-num {
+      font-size: 0.8rem;
+      font-weight: 800;
+      background: #edf2f7;
+      color: #2d3748;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .card-title {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: #1a202c;
+    }
+
+    .doc-p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    /* 雙風格卡片 (Swing Jazz vs Alt Rock) */
+    .style-duo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .style-card {
+      padding: 14px 16px;
+      border-radius: 12px;
+    }
+    .style-card.jazz {
+      background: var(--color-jazz-bg);
+      border: 1px solid var(--color-jazz-border);
+    }
+    .style-card.rock {
+      background: var(--color-rock-bg);
+      border: 1px solid var(--color-rock-border);
+    }
+    .style-card-title {
+      font-size: 0.98rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .style-card.jazz .style-card-title { color: var(--color-jazz); }
+    .style-card.rock .style-card-title { color: var(--color-rock); }
+    .style-card-desc {
+      font-size: 0.86rem;
+      color: #4a5568;
+      line-height: 1.6;
+    }
+
+    /* 圖片展示外框 (GitHub 圖片容器) */
+    .img-box {
+      margin: 16px 0;
+      background: #fdfdfd;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 8px;
+      text-align: center;
+    }
+    .img-box img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+    .img-caption {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    /* 曲目流程清單卡片 (原第一版的精緻條目) */
+    .timeline-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .timeline-card {
+      background: #fcfcfd;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 14px 16px;
+      position: relative;
+    }
+    .timeline-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .timeline-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #1a202c;
+    }
+    .timeline-time {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #b7791f;
+      background: #fefcbf;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-family: monospace;
+    }
+    .timeline-body {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      line-height: 1.55;
+    }
+    .timeline-tech {
+      font-size: 0.78rem;
+      color: #4a5568;
+      background: #edf2f7;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border-left: 3px solid #718096;
+    }
+
+    /* 跨域技術卡片 */
+    .tech-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .tech-item {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .tech-item-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #2b6cb0;
+      margin-bottom: 4px;
+    }
+    .tech-item-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* =============================================================
+       底部專屬：🎮 展演連擊互動機制原型體驗 (街機遊戲感)
+    ============================================================= */
+    .game-prototype {
+      background: #1a202c; /* 底部刻意維持沉浸式深色街機氛圍 */
+      color: #fff;
+      border-radius: 20px;
+      padding: 22px 18px;
+      margin-top: 26px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .game-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .game-title {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .game-subtitle {
+      font-size: 0.8rem;
+      color: #a0aec0;
+      margin-top: 4px;
+    }
+
+    /* 控制列 */
+    .game-control-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .btn-settle {
+      flex: 1;
+      background: linear-gradient(135deg, #f6e05e, #ed8936);
+      color: #1a202c;
+      font-weight: 800;
+      font-size: 0.9rem;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(237, 137, 54, 0.4);
+      transition: transform 0.08s ease;
+    }
+    .btn-settle:active {
+      transform: scale(0.97);
+    }
+    .btn-reset {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #cbd5e0;
+      font-size: 0.82rem;
+      padding: 0 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* 街機能量條 */
+    .game-hud {
+      background: #0f131a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+    .hud-labels {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .label-jazz { color: #63b3ed; }
+    .label-rock { color: #fc8181; }
+    .score-badge {
+      font-family: monospace;
+      font-size: 1.15rem;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2px 8px;
+      border-radius: 4px;
+      color: #fff;
+    }
+
+    .energy-bar-track {
+      height: 20px;
+      background: #2d3748;
+      border-radius: 999px;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .bar-jazz-fill {
+      width: 50%;
+      background: linear-gradient(90deg, #3182ce, #63b3ed);
+      transition: width 0.12s ease-out;
+    }
+    .bar-rock-fill {
+      width: 50%;
+      background: linear-gradient(90deg, #fc8181, #e53e3e);
+      transition: width 0.12s ease-out;
+    }
+    .bar-divider {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #fff;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    /* 連打大按鈕 */
+    .action-btn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      user-select: none;
+    }
+    .tap-btn {
+      min-height: 90px;
+      border-radius: 14px;
+      border: none;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      touch-action: manipulation;
+      transition: transform 0.06s ease;
+    }
+    .tap-btn:active {
+      transform: scale(0.95);
+    }
+    .tap-btn-jazz {
+      background: linear-gradient(145deg, #2b6cb0, #1a365d);
+      border: 2px solid #63b3ed;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(49, 130, 206, 0.35);
+    }
+    .tap-btn-rock {
+      background: linear-gradient(145deg, #c53030, #742a2a);
+      border: 2px solid #fc8181;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(229, 62, 62, 0.35);
+    }
+    .btn-main-text {
+      font-size: 0.96rem;
+      font-weight: 800;
+      pointer-events: none;
+    }
+    .btn-sub-text {
+      margin-top: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 2px 10px;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    /* 點擊浮現 +1 */
+    .float-num {
+      position: absolute;
+      font-size: 1.15rem;
+      font-weight: 900;
+      pointer-events: none;
+      animation: floatUp 0.5s ease-out forwards;
+      z-index: 10;
+    }
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-28px); }
+    }
+
+    /* 彈跳結算視窗 */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding: 20px;
+    }
+    .modal-overlay.show {
+      display: flex;
+    }
+    .modal-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px 20px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
+    .modal-card-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #1a202c;
+      margin-bottom: 8px;
+    }
+    .modal-card-body {
+      font-size: 0.9rem;
+      color: #4a5568;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .modal-close-btn {
+      background: #1a202c;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 頂部主標題 -->
+    <header class="hero-header">
+      <span class="badge-tag">風格演繹展演實踐</span>
+      <h1 class="main-title">30分鐘個人專場提案</h1>
+      <p class="sub-title">「鬥樂的心靈談話」</p>
+    </header>
+
+    <!-- 專場基本資訊 -->
+    <section class="meta-grid">
+      <div class="meta-box">
+        <div class="meta-label">專案名稱</div>
+        <div class="meta-val">「鬥樂的心靈談話」</div>
+      </div>
+      <div class="meta-box">
+        <div class="meta-label">展演長度</div>
+        <div class="meta-val">30 分鐘</div>
+      </div>
+      <div class="meta-box">
+        <div class="meta-label">形式定位</div>
+        <div class="meta-val" style="font-size: 0.82rem;">沉浸式概念鋼琴專場 × 即時互動舞台</div>
+      </div>
+      <div class="meta-box">
+        <div class="meta-label">提案人</div>
+        <div class="meta-val">潘奕嘉</div>
+      </div>
+    </section>
+
+    <!-- 壹、創作構思與概念 -->
+    <section class="content-card">
+      <div class="card-header">
+        <span class="card-num">壹</span>
+        <h2 class="card-title">創作構思與概念</h2>
+      </div>
+
+      <p class="doc-p">
+        <strong>創作背景：</strong><br>
+        本企劃是以音樂的「call and response」為發想，希望能將此聽覺具現化，並且融入觀眾互動的元素。音樂背景方面則是以出來臺北生活，上了大學之後對於人生迷茫，心裡所產生出來的聲音對話。
+      </p>
+      <p class="doc-p">
+        人們的心裡總會有好幾種聲音告訴我們，應該要去勇敢地面對那些未知的挑戰，但另一方面又會有別的心聲告訴我們安逸的度過就好。因此我想要做的是將這兩種心聲轉變為不同風格的音樂，在舞台上呈現出內心的掙扎。
+      </p>
+
+      <!-- 兩種心靈風格卡片 -->
+      <div class="style-duo-grid">
+        <div class="style-card jazz">
+          <div class="style-card-title">Swing Jazz</div>
+          <p class="style-card-desc">
+            代表著內心較為舒緩的聲音，期待著自己能夠往上的不斷攀爬，一步一步的走向自己所期望的高度。
+          </p>
+        </div>
+
+        <div class="style-card rock">
+          <div class="style-card-title">Alternative Rock</div>
+          <p class="style-card-desc">
+            代表著內心發洩的情緒，想要對著那個無能與怠惰的自己怒吼，不斷封閉著自己的心靈。
+          </p>
+        </div>
+      </div>
+
+      <p class="doc-p" style="margin-bottom:0;">
+        <strong>舞臺上的定位：</strong><br>
+        （參考圖一）打破純傳統樂器樂演奏的距離感，舞台左右兩側並非外在角色，而是個人的兩種心聲外畫出來的投射，擴大本人表達的一種形式。而中央的鋼琴則代表本人的精神核心，透過鍵盤不斷地自我對話，來進行自我解剖。
+      </p>
+    </section>
+
+    <!-- 貳、展演空間與視覺設定 -->
+    <section class="content-card">
+      <div class="card-header">
+        <span class="card-num">貳</span>
+        <h2 class="card-title">展演空間與視覺設定</h2>
+      </div>
+
+      <p class="doc-p">
+        <strong>空間分佈（參考圖一）：</strong><br>
+        • <strong>中央舞台：鋼琴家（本體）</strong> — 穿梭於兩種極端的風格之間，負責引導全場敘事與核心旋律。<br>
+        • <strong>左舞台：Big Band樂團</strong> — Swing風格，較為和緩與慢板，和聲較複雜。<br>
+        • <strong>右舞台：Rock樂團</strong> — Alternative Rock風格，和聲較單一但旋律穿插藍調或是更多暴走的鋼琴旋律。
+      </p>
+
+      <!-- 圖一：直接載入同目錄下的 fig1.png -->
+      <div class="img-box">
+        <img src="fig1.png" alt="（圖一）展演空間與舞台分佈配置" loading="lazy" />
+        <div class="img-caption">（圖一）舞台空間配置圖</div>
+      </div>
+
+      <p class="doc-p">
+        <strong>視覺與燈光聯動：</strong><br>
+        聚光燈隨著旋律的「Call and Response」來即時追隨主導旋律的一側。<br>
+        背景投影顯示如街機格鬥般的「能量UI條」（參見圖二）。
+      </p>
+
+      <!-- 圖二：直接載入同目錄下的 fig2.png -->
+      <div class="img-box">
+        <img src="fig2.png" alt="（圖二）背景投影能量UI條示意" loading="lazy" />
+        <div class="img-caption">（圖二）背景投影「能量UI條」示意</div>
+      </div>
+    </section>
+
+    <!-- 參、30分鐘曲目結構與流程 -->
+    <section class="content-card">
+      <div class="card-header">
+        <span class="card-num">參</span>
+        <h2 class="card-title">30分鐘曲目結構與流程</h2>
+      </div>
+
+      <div class="timeline-wrap">
+        
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <span class="timeline-name">Intro</span>
+            <span class="timeline-time">0 ~ 3 min</span>
+          </div>
+          <div class="timeline-body">鋼琴獨奏，由鋼琴引出提問的問題。</div>
+          <div class="timeline-tech">舞台互動：全場燈暗，聚光燈在鋼琴手。</div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <span class="timeline-name">Round 1</span>
+            <span class="timeline-time">3 ~ 10 min</span>
+          </div>
+          <div class="timeline-body">一首呈現左右兩側主題的歌曲，回答剛剛提出的問題。</div>
+          <div class="timeline-tech">舞台互動：左右輪流給予燈光，開啟手機連點。</div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <span class="timeline-name">Round 2</span>
+            <span class="timeline-time">10 ~ 20 min</span>
+          </div>
+          <div class="timeline-body">一首鋼琴再次針對答案提問的歌曲，左右兩側密集一唱一答的辯論。</div>
+          <div class="timeline-tech">舞台互動：燈光隨旋律快速切換至Rock、Big band以及鋼琴，開啟手機連點。</div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <span class="timeline-name">Round 3</span>
+            <span class="timeline-time">20 ~ 27 min</span>
+          </div>
+          <div class="timeline-body">一首鋼琴不斷被兩方拉扯，不斷附和兩方的曲子。</div>
+          <div class="timeline-tech">舞台互動：若前次2:0，分數x2，觀眾較支持的一方可以獲得兩倍分數。</div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <span class="timeline-name">Coda</span>
+            <span class="timeline-time">27 ~ 30 min</span>
+          </div>
+          <div class="timeline-body">觸發獲勝一側的Coda，壓倒性的高潮謝幕。</div>
+          <div class="timeline-tech">舞台互動：若前次平手則在曲子前面的段落在讓觀眾投票，較多人支持者得一分。全場燈光大開，獲勝的一方全編制合奏 + 鋼琴華彩，失敗的一方則陪襯。</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 肆、MIT 跨域整合與技術實踐 -->
+    <section class="content-card">
+      <div class="card-header">
+        <span class="card-num">肆</span>
+        <h2 class="card-title">MIT 跨域整合與技術實踐</h2>
+      </div>
+
+      <div class="tech-card-grid">
+        <div class="tech-item">
+          <div class="tech-item-title">音樂 X 新媒</div>
+          <div class="tech-item-desc">
+            觀眾入場掃描 QR Code 進入輕量化網頁，在演奏中透過「連點螢幕」為支持的心靈面向集氣，即時回傳數據影響大螢幕視覺與結局。
+          </div>
+        </div>
+
+        <div class="tech-item">
+          <div class="tech-item-title">音樂 X 劇設</div>
+          <div class="tech-item-desc">
+            以鋼琴MIDI訊號 + Timecode / DMX 燈光連動燈光控制器，精準實現「音符到哪、聚光燈打到哪」的視覺辯論。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================
+         🎮 展演連擊互動機制原型體驗 (底部互動區塊)
+    ============================================================= -->
+    <section class="game-prototype">
+      <div class="game-header">
+        <h3 class="game-title">🎮 展演連擊互動機制原型體驗</h3>
+        <p class="game-subtitle">現場觀眾連點集氣！拉鋸雙向能量條</p>
+      </div>
+
+      <!-- 控制按鈕列 -->
+      <div class="game-control-bar">
+        <button class="btn-settle" id="settleBtn">⚡ 結算</button>
+        <button class="btn-reset" id="resetBtn">重置</button>
+      </div>
+
+      <!-- 雙向能量條 (HUD) -->
+      <div class="game-hud">
+        <div class="hud-labels">
+          <span class="label-jazz">都市理性 (藍/紫) : <strong id="jazzCount">50</strong></span>
+          <span class="score-badge" id="scoreBoard">1 : 0</span>
+          <span class="label-rock">情感本能 (紅/橘) : <strong id="rockCount">50</strong></span>
+        </div>
+        <div class="energy-bar-track">
+          <div class="bar-jazz-fill" id="barJazz"></div>
+          <div class="bar-divider"></div>
+          <div class="bar-rock-fill" id="barRock"></div>
+        </div>
+      </div>
+
+      <!-- 兩個大按鈕：左邊【都市理性 (藍/紫)】、右邊【情感本能 (紅/橘)】 -->
+      <div class="action-btn-grid">
+        <button class="tap-btn tap-btn-jazz" id="btnJazz">
+          <span class="btn-main-text">都市理性 (藍/紫)</span>
+          <span class="btn-sub-text">TAP! 連擊 +1</span>
+        </button>
+
+        <button class="tap-btn tap-btn-rock" id="btnRock">
+          <span class="btn-main-text">情感本能 (紅/橘)</span>
+          <span class="btn-sub-text">TAP! 連擊 +1</span>
+        </button>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 結算彈窗 -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card">
+      <div style="font-size: 2.4rem; margin-bottom: 8px;">🎉</div>
+      <h4 class="modal-card-title" id="modalTitle">結算結果</h4>
+      <p class="modal-card-body" id="modalDesc"></p>
+      <button class="modal-close-btn" id="modalClose">確認關閉</button>
+    </div>
+  </div>
+
+  <!-- Vanilla JS 互動邏輯 -->
+  <script>
+    (function () {
+      let jazzScore = 50;
+      let rockScore = 50;
+
+      const barJazz = document.getElementById('barJazz');
+      const barRock = document.getElementById('barRock');
+      const jazzCountEl = document.getElementById('jazzCount');
+      const rockCountEl = document.getElementById('rockCount');
+      const scoreBoard = document.getElementById('scoreBoard');
+
+      const btnJazz = document.getElementById('btnJazz');
+      const btnRock = document.getElementById('btnRock');
+      const settleBtn = document.getElementById('settleBtn');
+      const resetBtn = document.getElementById('resetBtn');
+
+      const modalOverlay = document.getElementById('modalOverlay');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDesc = document.getElementById('modalDesc');
+      const modalClose = document.getElementById('modalClose');
+
+      // 更新進度條與數據
+      function updateHUD() {
+        const total = jazzScore + rockScore;
+        const jazzPercent = total === 0 ? 50 : (jazzScore / total) * 100;
+        const rockPercent = 100 - jazzPercent;
+
+        barJazz.style.width = jazzPercent + '%';
+        barRock.style.width = rockPercent + '%';
+
+        jazzCountEl.textContent = jazzScore;
+        rockCountEl.textContent = rockScore;
+
+        if (jazzScore > rockScore) {
+          scoreBoard.textContent = '1 : 0';
+        } else if (rockScore > jazzScore) {
+          scoreBoard.textContent = '0 : 1';
+        } else {
+          scoreBoard.textContent = '0 : 0';
+        }
+      }
+
+      // 產生點擊冒字動效
+      function showFloatNumber(btn, text, color) {
+        const rect = btn.getBoundingClientRect();
+        const span = document.createElement('span');
+        span.className = 'float-num';
+        span.textContent = text;
+        span.style.color = color;
+        span.style.left = (rect.width * 0.42) + 'px';
+        span.style.top = '14px';
+
+        btn.appendChild(span);
+
+        if (navigator.vibrate) {
+          navigator.vibrate(20);
+        }
+
+        setTimeout(() => {
+          span.remove();
+        }, 500);
+      }
+
+      // 左邊【都市理性 (藍/紫)】連擊
+      btnJazz.addEventListener('pointerdown', function (e) {
+        e.preventDefault();
+        jazzScore += 1;
+        showFloatNumber(btnJazz, '+1', '#63b3ed');
+        updateHUD();
+      });
+
+      // 右邊【情感本能 (紅/橘)】連擊
+      btnRock.addEventListener('pointerdown', function (e) {
+        e.preventDefault();
+        rockScore += 1;
+        showFloatNumber(btnRock, '+1', '#fc8181');
+        updateHUD();
+      });
+
+      // 結算按鈕邏輯
+      settleBtn.addEventListener('click', function () {
+        if (jazzScore > rockScore) {
+          modalTitle.textContent = '判定結果';
+          modalDesc.innerHTML = '🎉 <strong>[都市理性] 獲勝！觸發專屬尾奏彩華！</strong><br><br>Swing Jazz 全編制合奏啟動，鋼琴華彩穿梭典雅和聲！';
+        } else if (rockScore > jazzScore) {
+          modalTitle.textContent = '判定結果';
+          modalDesc.innerHTML = '🎉 <strong>[情感本能] 獲勝！觸發專屬尾奏彩華！</strong><br><br>Alternative Rock 失真咆哮與暴走鋼琴全開，壓倒性高潮謝幕！';
+        } else {
+          modalTitle.textContent = '勢均力敵！';
+          modalDesc.innerHTML = '雙方支持度完美平衡！依規則將於曲子前段開啟即時投票加賽！';
+        }
+
+        modalOverlay.classList.add('show');
+      });
+
+      // 關閉結算視窗
+      modalClose.addEventListener('click', function () {
+        modalOverlay.classList.remove('show');
+      });
+
+      // 重置比分
+      resetBtn.addEventListener('click', function () {
+        jazzScore = 50;
+        rockScore = 50;
+        updateHUD();
+      });
+
+      // 初始化渲染
+      updateHUD();
+    })();
+  </script>
+</body>
+</html>
