@@ -707,24 +707,37 @@
         <button class="btn-reset" id="resetBtn">重置</button>
       </div>
 
-      <!-- 雙向能量條 (HUD) -->
+     <!-- 雙向能量條 (HUD) -->
       <div class="game-hud">
         <div class="hud-labels">
-          <span class="label-jazz">都市理性 (藍/紫) : <strong id="jazzCount">50</strong></span>
-          <span class="score-badge" id="scoreBoard">1 : 0</span>
-          <span class="label-rock">情感本能 (紅/橘) : <strong id="rockCount">50</strong></span>
+          <span class="label-rock">Rock : <strong id="rockCount">50</strong></span>
+          <span class="score-badge" id="scoreBoard">0 : 0</span>
+          <span class="label-jazz">Jazz : <strong id="jazzCount">50</strong></span>
         </div>
         <div class="energy-bar-track">
-          <div class="bar-jazz-fill" id="barJazz"></div>
-          <div class="bar-divider"></div>
           <div class="bar-rock-fill" id="barRock"></div>
+          <div class="bar-divider"></div>
+          <div class="bar-jazz-fill" id="barJazz"></div>
         </div>
+      </div>
+
+      <!-- 兩個大按鈕：左邊【Rock】、右邊【Jazz】 -->
+      <div class="action-btn-grid">
+        <button class="tap-btn tap-btn-rock" id="btnRock">
+          <span class="btn-main-text">Rock</span>
+          <span class="btn-sub-text">TAP! 連擊 +1</span>
+        </button>
+
+        <button class="tap-btn tap-btn-jazz" id="btnJazz">
+          <span class="btn-main-text">Jazz</span>
+          <span class="btn-sub-text">TAP! 連擊 +1</span>
+        </button>
       </div>
 
       <!-- 兩個大按鈕：左邊【都市理性 (藍/紫)】、右邊【情感本能 (紅/橘)】 -->
       <div class="action-btn-grid">
         <button class="tap-btn tap-btn-jazz" id="btnJazz">
-          <span class="btn-main-text">都市理性 (藍/紫)</span>
+          <span class="btn-main-text">Rock </span>
           <span class="btn-sub-text">TAP! 連擊 +1</span>
         </button>
 
@@ -781,9 +794,9 @@
         jazzCountEl.textContent = jazzScore;
         rockCountEl.textContent = rockScore;
 
-        if (jazzScore > rockScore) {
+        if (rockScore > jazzScore) {
           scoreBoard.textContent = '1 : 0';
-        } else if (rockScore > jazzScore) {
+        } else if (jazzScore > rockScore) {
           scoreBoard.textContent = '0 : 1';
         } else {
           scoreBoard.textContent = '0 : 0';
@@ -829,12 +842,12 @@
 
       // 結算按鈕邏輯
       settleBtn.addEventListener('click', function () {
-        if (jazzScore > rockScore) {
+        if (rockScore > jazzScore) {
           modalTitle.textContent = '判定結果';
-          modalDesc.innerHTML = '🎉 <strong>[都市理性] 獲勝！觸發專屬尾奏彩華！</strong><br><br>Swing Jazz 全編制合奏啟動，鋼琴華彩穿梭典雅和聲！';
-        } else if (rockScore > jazzScore) {
+          modalDesc.innerHTML = '🎉 <strong>[Rock] 獲勝！觸發專屬尾奏彩華！</strong><br><br>Alternative Rock 失真咆哮與暴走鋼琴全開，壓倒性高潮謝幕！';
+        } else if (jazzScore > rockScore) {
           modalTitle.textContent = '判定結果';
-          modalDesc.innerHTML = '🎉 <strong>[情感本能] 獲勝！觸發專屬尾奏彩華！</strong><br><br>Alternative Rock 失真咆哮與暴走鋼琴全開，壓倒性高潮謝幕！';
+          modalDesc.innerHTML = '🎉 <strong>[Jazz] 獲勝！觸發專屬尾奏彩華！</strong><br><br>Swing Jazz 全編制合奏啟動，鋼琴華彩穿梭典雅和聲！';
         } else {
           modalTitle.textContent = '勢均力敵！';
           modalDesc.innerHTML = '雙方支持度完美平衡！依規則將於曲子前段開啟即時投票加賽！';
